@@ -33,9 +33,9 @@ body {
   color: var(--primary-text-color);
 }
 
-.theme-btn {
-  position: relative;
-  left: 8.5rem;
+.hero {
+  flex-direction: row;
+  justify-content: center;
 }
 
 h1,
@@ -49,7 +49,7 @@ p {
 article,
 footer,
 .hero,
-.logo-container,
+.social,
 .experience,
 .cta,
 .portfolio-skills,
@@ -59,7 +59,6 @@ footer,
   display: flex;
 }
 
-.hero,
 .portfolio,
 .skills {
   flex-direction: column;
@@ -72,7 +71,6 @@ footer,
   align-items: center;
 }
 
-.hero,
 .experience,
 .wrapper {
   text-align: center;
@@ -80,18 +78,22 @@ footer,
 
 article,
 .hero,
-.logo-container,
+.social,
 .portfolio,
 .skills {
   gap: 1rem;
 }
 
 .hero-pic {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+}
+
+hr {
+  width: 50%;
 }
 
 .inner-circle {
@@ -114,14 +116,16 @@ article,
 .hero-pic img {
   height: 100%;
   object-fit: cover;
-  object-position: top 0.4rem right -1.3rem;
-  transform: scale(1.9);
+  transform: scale(1);
 }
 
 .hero-info h1,
 h2 {
   font-weight: 400;
 }
+
+.social {
+justify-content: flex-start;}
 
 article p,
 .hero-info h2 {
@@ -134,8 +138,6 @@ article p,
 }
 
 footer,
-.logo-container,
-.experience,
 .cta,
 .portfolio-skills,
 .btn-bg {
@@ -143,15 +145,18 @@ footer,
 }
 
 .theme-btn,
-.logo-container a,
-.logo-container img {
+.social a,
+.social img {
   height: 1.5rem;
 }
 
 .experience {
-  margin: auto;
-  margin-top: 1.4rem;
-  max-width: 20rem;
+  justify-content: space-between;
+  width: 45rem;
+}
+
+.hero {
+  gap: 3rem;
 }
 
 .experience b {
@@ -164,11 +169,10 @@ footer,
   font-size: 0.9rem;
 }
 
-.cta {
-  margin-top: 1.2rem;
+section {
+  margin: 2rem auto;
 }
 
-.cta,
 .btn-bg {
   gap: 2rem;
 }
@@ -211,14 +215,14 @@ footer,
 .btn:hover,
 .btn-2:hover,
 .project-wrapper:hover,
-.logo-container a:hover {
+.social a:hover {
   transform: scale(0.98);
 }
 
 .btn:active,
 .btn-2:active,
 .project-wrapper:active,
-.logo-container a:active {
+.social a:active {
   transform: scale(1);
 }
 
@@ -256,7 +260,7 @@ footer,
 
 .portfolio-skills {
   height: 4rem;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
   position: relative;
 }
 
@@ -274,6 +278,11 @@ article p,
 .portfolio,
 .skills {
   margin-top: 2rem;
+}
+
+header {
+  text-align: right;
+  margin: 1rem;
 }
 
 .skills {
@@ -303,20 +312,28 @@ footer {
   margin: 3rem 0;
 }
 
+@media screen and (max-width: 900px) {
+  .experience {
+    width: 20rem;
+  }
+
+  .hero {
+    gap: 1rem;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .skills,
   .portfolio {
     flex-direction: row;
     width: 45rem;
   }
-  .skills {
-    margin: 2rem auto 0;
-  }
+
   .portfolio {
-    margin: 2rem auto;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .wrapper {
     width: calc(48%);
     flex: none;
